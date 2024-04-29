@@ -1,0 +1,33 @@
+
+[
+    {
+        "description": "Match words that consist entirely of vowels (a, e, i, o, u) and must be at least three characters long.",
+        "match": "aeiou iou ae i aeiouy ooo eee\n",
+        "result": ["aeiou", "ooo", "eee"]
+    },
+    {
+        "description": "Match any sequence of digits surrounded by curly braces, but only if they are not part of an array representation.",
+        "match": "{123} [456] {789} {012} [345] [678]\n",
+        "result": ["{123}", "{789}", "{012}"]
+    },
+    {
+        "description": "Match complete HTML or XML tags (including tag name and attributes), but only if they do not contain the 'id' attribute.",
+        "match": "<div class=\"test\"> <p id=\"para1\"> <a href=\"#\"> <span style=\"color: red;\">\n",
+        "result": ["<div class=\"test\">", "<a href=\"#\">", "<span style=\"color: red;\">"]
+    },
+    {
+        "description": "Match multiline text blocks that start and end with the same word, without considering case sensitivity.",
+        "match": "Hello\nworld\nhello Echo\ntest\necho Start\nfinish\nstart\n",
+        "result": ["Hello\nworld\nhello", "Echo\ntest\necho", "Start\nfinish\nstart"]
+    },
+    {
+        "description": "Match MAC addresses in the format XX:XX:XX:XX:XX:XX, ensuring each pair of digits consists only of hexadecimal characters, but exclude those that appear in a sentence.",
+        "match": "A1:B2:C3:D4:E5:F6 in the network 00:11:22:33:44:55, and then A1-23-45-67-89-AB\n",
+        "result": ["A1:B2:C3:D4:E5:F6"]
+    },
+    {
+        "description": "Match version numbers (major.minor.patch) that indicate a stable release (i.e., minor and patch numbers are even), but not include any that follow 'beta' or 'alpha'.",
+        "match": "1.2.0 3.1.4 beta 4.6.2 5.7.8 alpha 9.0.0 2.4.6\n",
+        "result": ["1.2.0", "2.4.6"]
+    }
+]

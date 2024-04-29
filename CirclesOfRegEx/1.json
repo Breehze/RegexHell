@@ -1,0 +1,37 @@
+[
+    {
+        "description": "Match the literal word 'Hello'.",
+        "match": "Hello\n",
+        "result": ["Hello"]
+    },
+    {
+        "description": "Match the literal word 'apple'.",
+        "match": "apple\n",
+        "result": ["apple"]
+    },
+    {
+        "description": "Match only the first sequence of digits.",
+        "match": "12345\n98765\n",
+        "result": ["12345"]
+    },
+    {
+        "description": "Match all animal names separated by spaces.",
+        "match": "Cat mat bat rat\n",
+        "result": ["Cat", "mat", "bat", "rat"]
+    },
+    {
+        "description": "Match all color names separated by spaces.",
+        "match": "green blue red\n",
+        "result": ["green", "blue", "red"]
+    },
+    {
+        "description": "Match the word 'go!' repeated and separated by spaces.",
+        "match": "go! go! go!\n",
+        "result": ["go!", "go!", "go!"]
+    },
+    {
+        "description": "Match the first date in the format 'YYYY/MM/DD'.",
+        "match": "2022/05/01\n2023/12/24\n",
+        "result": ["2022/05/01"]
+    }
+]

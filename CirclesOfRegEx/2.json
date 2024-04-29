@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Match any words that start with 'b' and end with 't'.",
+        "match": "bat bit bet but bot\n",
+        "result": ["bat", "bet", "but", "bot"]
+    },
+    {
+        "description": "Match any sequence of three digits.",
+        "match": "123 456 789 012\n",
+        "result": ["123", "456", "789", "012"]
+    },
+    {
+        "description": "Match all instances of 'file' followed by any number (e.g., file1, file2).",
+        "match": "file1 file2 file3\n",
+        "result": ["file1", "file2", "file3"]
+    },
+    {
+        "description": "Match email addresses that end with '.com'.",
+        "match": "user@example.com friend@test.com visitor@site.org\n",
+        "result": ["user@example.com", "friend@test.com"]
+    },
+    {
+        "description": "Match all words that contain at least one vowel (a, e, i, o, u).",
+        "match": "sky fry try fly ply\n",
+        "result": ["fly", "ply"]
+    },
+    {
+        "description": "Match strings that represent hexadecimal numbers (e.g., 0x1a2f, 0x3e4d).",
+        "match": "0x1a2f 0x3e4d 0x5g6h\n",
+        "result": ["0x1a2f", "0x3e4d"]
+    }
+]

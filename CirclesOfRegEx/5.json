@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Match sequences of 'abc' that are not immediately preceded or followed by another 'abc'.",
+        "match": "abcabc abc def abc abcabc\n",
+        "result": ["abc"]
+    },
+    {
+        "description": "Match numbers that are formatted with commas for every three digits starting from the right, but do not allow leading zeros unless the number is zero itself.",
+        "match": "12,345,678 0,123 000,123 0 00,000\n",
+        "result": ["12,345,678", "0"]
+    },
+    {
+        "description": "Match text within parentheses, but do not include any nested parentheses content.",
+        "match": "(hello (world)) (how are you) (today) (good (morning))\n",
+        "result": ["(how are you)", "(today)"]
+    },
+    {
+        "description": "Match email addresses only if they are not followed by '.edu' but are followed by any other domain such as '.com', '.net', etc.",
+        "match": "user@example.edu user@oracle.com user@apple.net friend@envelope.edu\n",
+        "result": ["user@oracle.com", "user@apple.net"]
+    },
+    {
+        "description": "Match hexadecimal color codes (e.g., #AABBCC) that do not immediately follow the word 'skip'.",
+        "match": "color #AABBCC skip#1122AA #123456 #ABCDEF skip#FEDCBA\n",
+        "result": ["#AABBCC", "#123456", "#ABCDEF"]
+    },
+    {
+        "description": "Match sequences that consist of repeating digits (3 or more times), but only if they are not part of a longer sequence of the same digit.",
+        "match": "111 2222 33333 4444 555 666666 7777777\n",
+        "result": ["111", "555"]
+    }
+]

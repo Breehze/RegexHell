@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Match numbers that are formatted either as simple decimals or as thousands separated by commas, but not those within text.",
+        "match": "100,234 345678 12,34,567 56.78 text12345\n",
+        "result": ["100,234", "345678", "56.78"]
+    },
+    {
+        "description": "Match strings of lowercase letters that are surrounded by two uppercase letters on each side, but not followed by a number.",
+        "match": "AAbbccAA DDeeFF123 GGhhII JjkkL123\n",
+        "result": ["AAbbccAA", "GGhhII"]
+    },
+    {
+        "description": "Match email addresses where the domain starts with a vowel (a, e, i, o, u) and ensure it's followed by '.com'.",
+        "match": "user@example.com user@oracle.com user@apple.com friend@envelope.com\n",
+        "result": ["user@apple.com", "friend@envelope.com"]
+    },
+    {
+        "description": "Match words that are exactly 5 letters long but do not start with 'a' or 'e'.",
+        "match": "apple event every eager tiger paper\n",
+        "result": ["tiger", "paper"]
+    },
+    {
+        "description": "Match valid dates in the format YYYY-MM-DD, where the year is between 1900 and 2099.",
+        "match": "1994-06-14 1899-12-31 2020-01-01 2100-01-01\n",
+        "result": ["1994-06-14", "2020-01-01"]
+    },
+    {
+        "description": "Match sequences that start with 'end' if they are not immediately followed by the word 'game'.",
+        "match": "endgame endnote endlight\n",
+        "result": ["endnote", "endlight"]
+    }
+]

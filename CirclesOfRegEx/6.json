@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Match decimal numbers with a point, ensuring they are not immediately followed by more digits, but can have digits before the point.",
+        "match": "12.34 56. 78.90 123.456\n",
+        "result": ["56."]
+    },
+    {
+        "description": "Match URLs that start with 'https://' and end with '.com', but exclude those that contain 'login' anywhere in the path.",
+        "match": "https://example.com https://site.com/login https://secure.com/account https://login.example.com\n",
+        "result": ["https://example.com", "https://secure.com/account"]
+    },
+    {
+        "description": "Match sequences of three identical letters that do not form part of a larger group of the same letter.",
+        "match": "aaa bbbb ccc dddd eee fffffff\n",
+        "result": ["aaa", "ccc", "eee"]
+    },
+    {
+        "description": "Match credit card numbers formatted as 'XXXX-XXXX-XXXX-XXXX' where 'X' is any digit, but only if they do not follow the word 'Invalid'.",
+        "match": "1234-5678-9101-1121 Invalid 2345-6789-0123-4567 3456-7890-1234-5678\n",
+        "result": ["1234-5678-9101-1121", "3456-7890-1234-5678"]
+    },
+    {
+        "description": "Match phone numbers in the format (XXX) XXX-XXXX, but only those that are not written inside a sentence.",
+        "match": "Call me at (123) 456-7890. (234) 567-8901 I was born in (345) 678-9012.\n",
+        "result": ["(234) 567-8901"]
+    },
+    {
+        "description": "Match Java or C# class names that begin with an uppercase letter and consist of alphanumeric characters, but do not end with 'Impl' or 'Test'.",
+        "match": "CustomerServiceImpl CustomerController ProductServiceTest ProductManager DataRepository\n",
+        "result": ["CustomerController", "ProductManager", "DataRepository"]
+    }
+]

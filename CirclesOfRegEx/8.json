@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Match complex nested parentheses while ensuring no inner parentheses are included in the match.",
+        "match": "(one (two) three) ((four) five) (six seven (eight))\n",
+        "result": ["(one (two) three)", "((four) five)"]
+    },
+    {
+        "description": "Match sequences of alphanumeric characters separated by hyphens, but only those that contain exactly three segments and each segment must begin with a letter.",
+        "match": "abc-123-def a1-234-bcd ef-gh-ij kl-mn-op\n",
+        "result": ["abc-123-def", "kl-mn-op"]
+    },
+    {
+        "description": "Match log entries that indicate an 'ERROR' level but do not include any timestamps between square brackets.",
+        "match": "ERROR [2024-01-01] Failure in system\nERROR Missing data field\nINFO [2024-01-02] Operation successful\n",
+        "result": ["ERROR Missing data field"]
+    },
+    {
+        "description": "Match binary numbers (sequences of 0s and 1s) that are exactly 8 bits long, but only if they are not part of a longer binary sequence.",
+        "match": "11001100 101 11110000 00000001 001100111 101010101\n",
+        "result": ["11001100", "11110000", "00000001"]
+    },
+    {
+        "description": "Match strings that represent properly formatted chemical formulas, ensuring elements are capitalized followed by a possible digit, but exclude any that are used in a sentence or part of a compound word.",
+        "match": "H2O CO2 NaCl C6H12O6 glucoseC6H12O6 NaHCO3\n",
+        "result": ["H2O", "CO2", "NaCl", "NaHCO3"]
+    },
+    {
+        "description": "Match only those IP addresses from a list that fall within the private IP range (192.168.0.0 to 192.168.255.255), but not mentioned in a security context.",
+        "match": "192.168.1.1 192.168.100.200 in a security breach 172.16.0.1 192.168.0.255\n",
+        "result": ["192.168.1.1", "192.168.0.255"]
+    }
+]

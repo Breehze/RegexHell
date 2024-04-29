@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Match words that end with 'ing' but do not start with 's'.",
+        "match": "singing ringing fling cling swing\n",
+        "result": ["ringing", "fling", "cling"]
+    },
+    {
+        "description": "Match any sequence of digits that directly follow the letter 'a' (e.g., a123 but not b123).",
+        "match": "a123 b456 a789\n",
+        "result": ["a123", "a789"]
+    },
+    {
+        "description": "Match phone numbers in the format 123-456-7890, but not those followed by any letters.",
+        "match": "123-456-7890 123-456-7890x abc-123-4567\n",
+        "result": ["123-456-7890"]
+    },
+    {
+        "description": "Match all words that contain a vowel, but do not match if the word is immediately preceded by a '!' (exclamation mark).",
+        "match": "apple !apple banana !banana cherry\n",
+        "result": ["apple", "banana", "cherry"]
+    },
+    {
+        "description": "Match IP addresses that are not followed by the word 'invalid'.",
+        "match": "192.168.1.1 10.0.0.1 invalid 172.16.0.1\n",
+        "result": ["192.168.1.1", "172.16.0.1"]
+    },
+    {
+        "description": "Match strings that start with 'http' followed by 's' (optional), but do not end with '.org'.",
+        "match": "http://example.com https://example.net http://example.org\n",
+        "result": ["http://example.com", "https://example.net"]
+    }
+]
